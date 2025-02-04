@@ -1,5 +1,6 @@
 ---
-
+import { Image } from 'astro:assets';
+import GithubImage from "~/images/github-clipart.png";
 ---
 
 <header>
@@ -7,7 +8,14 @@
     <ul>
       <li>
         <a href="/">
-          <strong>smallworld</strong>
+          <strong>vaughanm.xyz</strong>
+        </a>
+      </li>
+    </ul>
+    <ul>
+      <li>
+        <a href="https://github.com/zeroxoneafour">
+          <Image class="clipart" src={GithubImage} alt="GitHub link"/>
         </a>
       </li>
     </ul>

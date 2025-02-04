@@ -1,5 +1,5 @@
 @use "@picocss/pico/scss" with (
-  $theme-color: "jade",
+  $theme-color: "blue",
   $modules: (
     // Deactivate some form css
     "forms/basics": false,
@@ -19,3 +19,10 @@
     "components/tooltip": false,
   )
 );
+
+.clipart {
+  width: auto;
+  height: 32px;
+  aspect-ratio: 1;
+  filter: invert(58%) sepia(45%) saturate(902%) hue-rotate(198deg) brightness(101%) contrast(95%);
+}
