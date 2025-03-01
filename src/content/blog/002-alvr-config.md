@@ -2,7 +2,7 @@
 title: Configuring ALVR
 description: An in depth guide to configuring ALVR
 pubDate: 2025-03-01
-tags: vr
+tags: [vr]
 ---
 
 # Configuring ALVR
