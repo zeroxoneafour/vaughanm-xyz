@@ -1,5 +1,6 @@
 ---
 title: Skyrim VR on Linux
+description: An afternoon wasted
 pubDate: 2025-03-23
 tags: [vr]
 ---
