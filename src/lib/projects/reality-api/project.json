@@ -1,9 +1,9 @@
 {
-    "name": "Reality API Server Development",
-    "description": "Helped GTXR design and implement an API for cross-device colocated communication",
-    "codeLink": "https://github.com/LilG0053/RealityAPIServer",
-    "tags": ["vr", "linux"],
-    "skills": ["git", "github", "protobuf", "python", "hardware"],
-    "startDate": "2026-09-09",
-    "importance": 99
+	"name": "Reality API Server Development",
+	"description": "Helped GTXR design and implement an API for cross-device colocated communication",
+	"codeLink": "https://github.com/LilG0053/RealityAPIServer",
+	"tags": ["vr", "linux"],
+	"skills": ["git", "github", "protobuf", "python", "hardware"],
+	"startDate": "2026-09-09",
+	"importance": 99
 }

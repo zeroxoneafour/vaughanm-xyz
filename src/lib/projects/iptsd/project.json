@@ -1,8 +1,9 @@
 {
-    "name": "IPTSD user-space daemon work",
-    "description": "Added various features and refinements to the Intel Precise Touch and Stylus Daemon for Linux",
-    "codeLink": "https://github.com/zeroxoneafour/iptsd",
-    "tags": ["linux"],
-    "skills": ["cpp", "git", "systems"],
-    "date": "2026-07-21"
+	"name": "IPTSD user-space daemon work",
+	"description": "Added various features and refinements to the Intel Precise Touch and Stylus Daemon for Linux",
+	"codeLink": "https://github.com/zeroxoneafour/iptsd",
+	"tags": ["linux"],
+	"skills": ["cpp", "git", "systems"],
+	"date": "2026-07-21",
+	"importance": 40
 }

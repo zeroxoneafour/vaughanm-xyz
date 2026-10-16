@@ -1,20 +1,20 @@
 {
-    "name": "Polonium v1.1",
-    "description": "Tiling window mangement script for KDE Plasma",
-    "codeLink": "https://github.com/zeroxoneafour/polonium",
-    "deployLink": "https://polonium.vaughanm.xyz",
-    "tags": ["linux"],
-    "skills": ["typescript", "make", "git", "github"],
-    "images": [
-        {
-            "src": "1.png",
-            "alt": "Polonium Screenshot 1"
-        },
-        {
-            "src": "2.png",
-            "alt": "Polonium Screenshot 2"
-        }
-    ],
-    "importance": 100,
-    "startDate": "2026-05-23"
+	"name": "Polonium v1.1",
+	"description": "Tiling window mangement script for KDE Plasma",
+	"codeLink": "https://github.com/zeroxoneafour/polonium",
+	"deployLink": "https://polonium.vaughanm.xyz",
+	"tags": ["linux"],
+	"skills": ["typescript", "make", "git", "github"],
+	"slides": [
+		{
+			"src": "1.png",
+			"alt": "Tiling example"
+		},
+		{
+			"src": "2.png",
+			"alt": "Another tiling example"
+		}
+	],
+	"importance": 100,
+	"startDate": "2026-05-23"
 }

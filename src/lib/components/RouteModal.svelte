@@ -11,12 +11,11 @@
 -->
 <script lang="ts">
 	import { onMount, type Snippet } from 'svelte';
-	import { cubicIn, cubicOut } from 'svelte/easing';
-	import { prefersReducedMotion } from 'svelte/motion';
 	import { fade, fly } from 'svelte/transition';
 	import XIcon from '@lucide/svelte/icons/x';
 	import { afterNavigate, goto } from '$app/navigation';
 	import { isAppReady } from '#lib/app-ready.js';
+	import { modalEnter, modalLeave } from '#lib/modal-motion.js';
 
 	interface Props {
 		/** Shown in the card's sticky header, and labels the dialog. */
@@ -32,11 +31,8 @@
 	// Only animate in when opened by client-side navigation. On a direct load the card is already on
 	// screen from the prerendered HTML, so flying it in would make it jump.
 	const animateIn = isAppReady();
-	const enter = $derived({
-		duration: animateIn && !prefersReducedMotion.current ? 300 : 0,
-		easing: cubicOut
-	});
-	const leave = $derived({ duration: prefersReducedMotion.current ? 0 : 220, easing: cubicIn });
+	const enter = $derived(animateIn ? modalEnter() : { ...modalEnter(), duration: 0 });
+	const leave = $derived(modalLeave());
 
 	let dialog: HTMLDialogElement;
 	let previous: URL | undefined;

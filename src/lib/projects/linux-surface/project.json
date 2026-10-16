@@ -1,8 +1,9 @@
 {
-    "name": "linux-surface Kernel Patches",
-    "description": "Patched the kernel to better support cameras and other features on the Surface Pro 9",
-    "codeLink": "https://github.com/zeroxoneafour/linux-surface",
-    "tags": ["linux"],
-    "skills": ["c", "git", "systems"],
-    "date": "2026-07-21"
+	"name": "linux-surface Kernel Patches",
+	"description": "Patched the kernel to better support cameras and other features on the Surface Pro 9",
+	"codeLink": "https://github.com/zeroxoneafour/linux-surface",
+	"tags": ["linux"],
+	"skills": ["c", "git", "systems"],
+	"date": "2026-07-21",
+	"importance": 60
 }

@@ -1,9 +1,10 @@
 {
-    "name": "slimpend",
-    "description": "Surface Slim Pen 2 haptic feedback daemon for Linux. Reverse engineered from Windows with help from AI",
-    "codeLink": "https://github.com/zeroxoneafour/slimpend",
-    "tags": ["linux"],
-    "skills": ["rust", "ai", "systems"],
-    "startDate": "2026-08-12",
-    "endDate": "2026-09-17"
+	"name": "slimpend",
+	"description": "Surface Slim Pen 2 haptic feedback daemon for Linux. Reverse engineered from Windows with help from AI",
+	"codeLink": "https://github.com/zeroxoneafour/slimpend",
+	"tags": ["linux"],
+	"skills": ["rust", "ai", "systems"],
+	"startDate": "2026-08-12",
+	"endDate": "2026-09-17",
+	"importance": 60
 }

@@ -1,10 +1,25 @@
 {
-    "name": "Planet",
-    "description": "A planner app with responsive UI and Firebase backups",
-    "codeLink": "https://github.com/zeroxoneafour/Planet",
-    "deployLink": "https://planet.vaughanm.xyz",
-    "tags": ["web"],
-    "skills": ["typescript", "svelte", "skeleton", "tailwind", "firebase"],
-    "startDate": "2025-10-02",
-    "endDate": "2025-12-01"
+	"name": "Planet",
+	"description": "A planner app with responsive UI and Firebase backups",
+	"codeLink": "https://github.com/zeroxoneafour/Planet",
+	"deployLink": "https://planet.vaughanm.xyz",
+	"tags": ["web"],
+	"skills": ["typescript", "svelte", "skeleton", "tailwind", "firebase"],
+	"startDate": "2025-10-02",
+	"endDate": "2025-12-01",
+	"importance": 10,
+	"slides": [
+		{
+			"src": "planet.png",
+			"alt": "Home Screen"
+		},
+		{
+			"src": "add plan.png",
+			"alt": "Add Plan Menu"
+		},
+		{
+			"src": "settings.png",
+			"alt": "Settings Menu"
+		}
+	]
 }

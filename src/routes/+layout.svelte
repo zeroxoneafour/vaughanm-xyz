@@ -6,17 +6,22 @@
 	import { page } from '$app/state';
 	import { markAppReady } from '#lib/app-ready.js';
 	import favicon from '#lib/assets/favicon.svg';
+	import faviconDark from '#lib/assets/favicon-dark.svg';
 	import BrandIcon from '#lib/components/BrandIcon.svelte';
+	import { SITE } from '#lib/site.js';
 	import type { LayoutProps } from './$types';
 
 	let { children }: LayoutProps = $props();
+
+	// The page's absolute URL (path only: the query string isn't available while prerendering).
+	const pageUrl = $derived(SITE.url + page.url.pathname);
 
 	// Children mount first, so anything that checks this during its first render can tell an
 	// initial page load apart from a later client-side navigation.
 	onMount(markAppReady);
 
 	const links = [
-	    { href: resolve('/about'), label: 'About' },
+		{ href: resolve('/about'), label: 'About' },
 		{ href: resolve('/projects'), label: 'Projects' },
 		{ href: resolve('/blog'), label: 'Blog' }
 	];
@@ -27,7 +32,18 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" href={favicon} media="(prefers-color-scheme: light)" />
+	<link rel="icon" href={faviconDark} media="(prefers-color-scheme: dark)" />
+
+	<!-- Link previews (pages add their own title/description via PageMeta). -->
+	<link rel="canonical" href={pageUrl} />
+	<meta property="og:site_name" content={SITE.name} />
+	<meta property="og:url" content={pageUrl} />
+	<meta property="og:image" content={SITE.url + SITE.image.path} />
+	<meta property="og:image:width" content={String(SITE.image.width)} />
+	<meta property="og:image:height" content={String(SITE.image.height)} />
+	<meta property="og:image:alt" content={SITE.image.alt} />
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <div class="grid min-h-screen grid-cols-1 grid-rows-[auto_1fr_auto]">
@@ -41,11 +57,11 @@
 			<AppBar.Lead class="flex items-stretch">
 				<a
 					href={resolve('/')}
-					class="ml-2 sm:ml-0 mr-4 flex items-center text-base font-bold tracking-tight max-[359px]:text-sm sm:text-lg"
+					class="mr-4 ml-2 flex items-center text-base font-bold tracking-tight max-[359px]:text-sm sm:ml-0 sm:text-lg"
 				>
 					vaughanm<span class="text-primary-500">.xyz</span>
 				</a>
-				<div class="sm:hidden grow"></div>
+				<div class="grow sm:hidden"></div>
 				{#each links as link (link.href)}
 					<!-- `-mb-px` sits the underline on top of the bar's bottom border, like svelte.dev. -->
 					<a
@@ -57,7 +73,7 @@
 					</a>
 				{/each}
 			</AppBar.Lead>
-			<AppBar.Trail class="items-center gap-0 sm:gap-1 hidden sm:flex" aria-label="Elsewhere">
+			<AppBar.Trail class="hidden items-center gap-0 sm:flex sm:gap-1" aria-label="Elsewhere">
 				<a
 					href="https://github.com/zeroxoneafour"
 					class="btn-icon text-surface-800-200 transition-colors hover:text-primary-500 sm:btn-icon-lg"

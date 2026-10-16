@@ -11,7 +11,9 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"test:unit": "vitest",
+		"test": "vitest --run"
 	},
 	"devDependencies": {
 		"@eslint/js": "^10.0.1",
@@ -24,12 +26,16 @@
 		"@sveltejs/vite-plugin-svelte": "^7.2.0",
 		"@tailwindcss/typography": "^0.5.19",
 		"@tailwindcss/vite": "^4.3.0",
+		"@testing-library/jest-dom": "^7.0.1",
+		"@testing-library/svelte": "^5.4.2",
+		"@testing-library/user-event": "^14.6.8",
 		"@types/hast": "^3.0.5",
 		"@types/node": "^24",
 		"eslint": "^10.4.1",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.19.0",
 		"globals": "^17.6.0",
+		"jsdom": "^30.1.3",
 		"prettier": "^3.8.3",
 		"prettier-plugin-svelte": "^4.1.0",
 		"prettier-plugin-tailwindcss": "^0.8.0",
@@ -46,7 +52,8 @@
 		"unified": "^11.0.5",
 		"vfile": "^6.0.3",
 		"vfile-matter": "^5.0.1",
-		"vite": "^8.3.0"
+		"vite": "^8.3.0",
+		"vitest": "^5.0.5"
 	},
 	"imports": {
 		"#lib": "./src/lib/index.js",

@@ -26,6 +26,8 @@ jobs:
           node-version-file: .nvmrc
           cache: npm
       - run: npm ci
+      # Don't publish a site whose tests fail.
+      - run: npm test
       # adapter-static prerenders every route into `build/`.
       - run: npm run build
       - uses: actions/upload-pages-artifact@v5

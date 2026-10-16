@@ -1,0 +1,16 @@
+{
+	"name": "Office Plus One",
+	"description": "Hackathon entry for HackGT 13. Used Godot and OpenXR hand tracking to deliver a streamlined and intutive virtual office",
+	"codeLink": "https://github.com/zeroxoneafour/OfficePlusOne",
+	"tags": ["vr"],
+	"skills": ["godot", "ai"],
+	"importance": 85,
+	"startDate": "2026-09-25",
+	"endDate": "2026-09-27",
+	"slides": [
+		{
+			"src": "https://www.youtube.com/embed/F48LYEt-INo?si=YGRkbyurqXieADIX",
+			"alt": "Office Plus One Demo Video"
+		}
+	]
+}

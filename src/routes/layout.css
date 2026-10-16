@@ -9,15 +9,34 @@
 /* Themes. The active theme is set by `data-theme` on <html> in `src/app.html`. */
 @import '../themes/catppuccin-mauve.css';
 
+/* One-off pulse for a highlighted card (e.g. the project linked to by /projects#…). */
+@theme {
+	--animate-highlight: highlight 900ms ease-out;
+
+	@keyframes highlight {
+		/* Includes the card's 2px ring, which also uses box-shadow, so it stays visible throughout. */
+		0% {
+			box-shadow:
+				0 0 0 2px var(--color-primary-500),
+				0 0 0 2px color-mix(in oklab, var(--color-primary-500) 70%, transparent);
+		}
+		100% {
+			box-shadow:
+				0 0 0 2px var(--color-primary-500),
+				0 0 0 16px transparent;
+		}
+	}
+}
+
 /*
-	While a RouteModal is open, the modal scrolls instead of the page behind it. Done in CSS so it
+	While a RouteModal or image lightbox is open, the page behind it doesn't scroll. Done in CSS so it
 	also applies to the prerendered HTML before hydration. The stable gutter stops the page shifting
 	sideways when its scrollbar goes away.
 */
 html {
 	scrollbar-gutter: stable;
 
-	&:has(dialog[data-route-modal][open]) {
+	&:has(dialog[data-route-modal][open], dialog[data-lightbox][open]) {
 		overflow: hidden;
 	}
 }

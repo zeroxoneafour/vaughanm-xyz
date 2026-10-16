@@ -18,7 +18,7 @@ const sources = import.meta.glob<string>('/src/lib/blog/*.md', {
 });
 
 /** Let inline code (e.g. long file paths) wrap after each `/`, not only at spaces. */
-function rehypeBreakInlineCodeAtSlashes() {
+export function rehypeBreakInlineCodeAtSlashes() {
 	const wbr = (): Element => ({ type: 'element', tagName: 'wbr', properties: {}, children: [] });
 
 	const walk = (node: Root | Element) => {
@@ -51,7 +51,12 @@ const processor = unified()
 	.use(rehypeBreakInlineCodeAtSlashes)
 	.use(rehypeStringify);
 
+const ISO_DATE = /^\d{4}-\d{2}-\d{2}$/;
+
 function toISODate(value: unknown, slug: string): string {
+	// Front matter usually gives `YYYY-MM-DD` as a string; take it as-is rather than through `Date`,
+	// which could shift it a day depending on the time zone.
+	if (typeof value === 'string' && ISO_DATE.test(value)) return value;
 	const date = value instanceof Date ? value : new Date(String(value));
 	if (Number.isNaN(date.getTime())) {
 		throw new Error(`Blog post "${slug}" has an invalid or missing pubDate`);
@@ -59,7 +64,14 @@ function toISODate(value: unknown, slug: string): string {
 	return date.toISOString().slice(0, 10);
 }
 
-async function compile(path: string, raw: string): Promise<{ meta: PostMeta; html: string }> {
+/**
+ * Compiles one markdown post (its source `path` and contents) into metadata from its front matter
+ * and rendered HTML. The slug is the file name. Throws if the title or date is missing or invalid.
+ */
+export async function compilePost(
+	path: string,
+	raw: string
+): Promise<{ meta: PostMeta; html: string }> {
 	const slug = path.slice(path.lastIndexOf('/') + 1, -'.md'.length);
 
 	const file = new VFile(raw);
@@ -85,7 +97,7 @@ let cache: Promise<{ meta: PostMeta; html: string }[]> | undefined;
 
 /** All posts, newest first. Compiled once per process. */
 function loadAll() {
-	cache ??= Promise.all(Object.entries(sources).map(([path, raw]) => compile(path, raw))).then(
+	cache ??= Promise.all(Object.entries(sources).map(([path, raw]) => compilePost(path, raw))).then(
 		(posts) => posts.sort((a, b) => b.meta.pubDate.localeCompare(a.meta.pubDate))
 	);
 	return cache;

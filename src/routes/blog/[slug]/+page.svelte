@@ -1,4 +1,5 @@
 <script lang="ts">
+	import PageMeta from '#lib/components/PageMeta.svelte';
 	import { resolve } from '$app/paths';
 	import { getBlogListHref } from '#lib/blog-context.js';
 	import FormattedDate from '#lib/components/FormattedDate.svelte';
@@ -13,12 +14,7 @@
 	const listHref = getBlogListHref();
 </script>
 
-<svelte:head>
-	<title>{post.title} | vaughanm.xyz</title>
-	{#if post.description}
-		<meta name="description" content={post.description} />
-	{/if}
-</svelte:head>
+<PageMeta title={post.title} description={post.description || undefined} type="article" />
 
 <RouteModal title={post.title} closeHref={listHref()}>
 	<div class="space-y-8">

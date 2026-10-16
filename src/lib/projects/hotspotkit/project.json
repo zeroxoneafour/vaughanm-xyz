@@ -1,8 +1,9 @@
 {
-    "name": "HotspotKit",
-    "description": "Toolkit to precisely configure the windows adhoc hotspot",
-    "codeLink": "https://github.com/zeroxoneafour/HotspotKit",
-    "tags": ["vr"],
-    "skills": ["csharp", "windows"],
-    "date": "2023-11-23"
+	"name": "HotspotKit",
+	"description": "Toolkit to precisely configure the windows adhoc hotspot",
+	"codeLink": "https://github.com/zeroxoneafour/HotspotKit",
+	"tags": ["vr"],
+	"skills": ["csharp", "windows"],
+	"date": "2023-11-23",
+	"importance": 30
 }

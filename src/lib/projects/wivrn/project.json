@@ -1,0 +1,24 @@
+{
+	"name": "WiVRn PyroWave Fork",
+	"description": "Added PyroWave codec streaming to WiVRn, bringing various performance benefits. Not merged yet.",
+	"codeLink": "https://github.com/zeroxoneafour/WiVRn",
+	"tags": ["vr"],
+	"skills": ["cpp", "graphics", "ai"],
+	"importance": 90,
+	"startDate": "2025-09-25",
+	"endDate": "2025-10-10",
+	"slides": [
+		{
+			"src": "2026_09_25T09_33_32_000Z.jpg",
+			"alt": "WiVRn Pyrowave latency"
+		},
+		{
+			"src": "2026_09_25T09_36_42_000Z.jpg",
+			"alt": "WiVRn Pyrowave latency in game"
+		},
+		{
+			"src": "2026_09_25T09_38_20_000Z.jpg",
+			"alt": "WiVRn H264 latency in game"
+		}
+	]
+}

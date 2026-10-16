@@ -1,11 +1,25 @@
 {
-    "name": "HeadsUp",
-    "description": "A modern and featureful Headscale admin panel",
-    "codeLink": "https://github.com/zeroxoneafour/HeadsUp",
-    "deployLink": "https://headscale.vaughanm.xyz/admin",
-    "tags": ["web"],
-    "skills": ["typescript", "svelte", "skeleton", "tailwind", "tailscale", "headscale"],
-    "importance": 100,
-    "startDate": "2026-08-08",
-    "endDate": "2026-08-09"
+	"name": "HeadsUp",
+	"description": "A modern and featureful Headscale admin panel",
+	"codeLink": "https://github.com/zeroxoneafour/HeadsUp",
+	"deployLink": "https://headscale.vaughanm.xyz/admin",
+	"tags": ["web"],
+	"skills": ["typescript", "svelte", "skeleton", "tailwind", "tailscale", "headscale"],
+	"importance": 35,
+	"startDate": "2026-08-08",
+	"endDate": "2026-08-09",
+	"slides": [
+		{
+			"src": "nodes.png",
+			"alt": "Nodes Panel"
+		},
+		{
+			"src": "users.png",
+			"alt": "Users Panel"
+		},
+		{
+			"src": "preauth.png",
+			"alt": "Preauth Panel"
+		}
+	]
 }
