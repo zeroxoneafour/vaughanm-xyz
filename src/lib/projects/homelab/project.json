@@ -6,7 +6,6 @@
 	"skills": ["tailscale", "systems", "podman"],
 	"importance": 55,
 	"startDate": "2026-07-27",
-	"endDate": "2026-08-22",
 	"slides": [
 		{
 			"src": "navidrome.png",
