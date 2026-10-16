@@ -1,0 +1,10 @@
+{
+    "name": "Planet",
+    "description": "A planner app with responsive UI and Firebase backups",
+    "codeLink": "https://github.com/zeroxoneafour/Planet",
+    "deployLink": "https://planet.vaughanm.xyz",
+    "tags": ["web"],
+    "skills": ["typescript", "svelte", "skeleton", "tailwind", "firebase"],
+    "startDate": "2025-10-02",
+    "endDate": "2025-12-01"
+}

@@ -16,6 +16,7 @@
 	onMount(markAppReady);
 
 	const links = [
+	    { href: resolve('/about'), label: 'About' },
 		{ href: resolve('/projects'), label: 'Projects' },
 		{ href: resolve('/blog'), label: 'Blog' }
 	];
@@ -37,13 +38,14 @@
 		<AppBar.Toolbar
 			class="mx-auto h-14 w-full max-w-6xl grid-cols-[1fr_auto] items-stretch px-3 sm:px-4"
 		>
-			<AppBar.Lead class="flex items-stretch gap-1 sm:gap-2">
+			<AppBar.Lead class="flex items-stretch">
 				<a
 					href={resolve('/')}
-					class="mr-2 flex items-center text-base font-bold tracking-tight max-[359px]:text-sm sm:text-lg"
+					class="ml-2 sm:ml-0 mr-4 flex items-center text-base font-bold tracking-tight max-[359px]:text-sm sm:text-lg"
 				>
 					vaughanm<span class="text-primary-500">.xyz</span>
 				</a>
+				<div class="sm:hidden grow"></div>
 				{#each links as link (link.href)}
 					<!-- `-mb-px` sits the underline on top of the bar's bottom border, like svelte.dev. -->
 					<a
@@ -55,7 +57,7 @@
 					</a>
 				{/each}
 			</AppBar.Lead>
-			<AppBar.Trail class="items-center gap-0 sm:gap-1" aria-label="Elsewhere">
+			<AppBar.Trail class="items-center gap-0 sm:gap-1 hidden sm:flex" aria-label="Elsewhere">
 				<a
 					href="https://github.com/zeroxoneafour"
 					class="btn-icon text-surface-800-200 transition-colors hover:text-primary-500 sm:btn-icon-lg"

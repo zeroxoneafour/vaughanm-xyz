@@ -18,7 +18,7 @@
 			My programming interests are primarily centered around XR and Linux at the moment.
 		</p>
 		<p class="text-surface-800-200">
-		    You can check out my <a href={resolve('/projects')} class="text-primary-500 hover:underline">projects</a> for more information about me.
+		    You can check out my <a href={resolve('/about')} class="text-primary-500 hover:underline">about page</a> and my <a href={resolve('/projects')} class="text-primary-500 hover:underline">projects</a> for more information.
 		</p>
 	</section>
 
