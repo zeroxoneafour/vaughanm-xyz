@@ -1,0 +1,78 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@import '@skeletonlabs/skeleton';
+@import '@skeletonlabs/skeleton-svelte';
+
+@import '@fontsource-variable/inter';
+
+/* Themes. The active theme is set by `data-theme` on <html> in `src/app.html`. */
+@import '../themes/catppuccin-mauve.css';
+
+/*
+	While a RouteModal is open, the modal scrolls instead of the page behind it. Done in CSS so it
+	also applies to the prerendered HTML before hydration. The stable gutter stops the page shifting
+	sideways when its scrollbar goes away.
+*/
+html {
+	scrollbar-gutter: stable;
+
+	&:has(dialog[data-route-modal][open]) {
+		overflow: hidden;
+	}
+}
+
+/*
+	Point @tailwindcss/typography at Skeleton's theme tokens so rendered markdown follows the active
+	theme instead of Tailwind's gray palette. The `-x-y` color pairings resolve via light-dark(), so
+	there's no need for `prose-invert` in dark mode.
+*/
+.prose {
+	--tw-prose-body: var(--color-surface-950-50);
+	--tw-prose-headings: var(--color-surface-950-50);
+	--tw-prose-lead: var(--color-surface-800-200);
+	--tw-prose-links: light-dark(var(--typo-anchor--color-light), var(--typo-anchor--color-dark));
+	--tw-prose-bold: var(--color-surface-950-50);
+	--tw-prose-counters: var(--color-surface-700-300);
+	--tw-prose-bullets: var(--color-primary-500);
+	--tw-prose-hr: var(--color-surface-200-800);
+	--tw-prose-quotes: var(--color-surface-950-50);
+	--tw-prose-quote-borders: var(--color-primary-500);
+	--tw-prose-captions: var(--color-surface-800-200);
+	--tw-prose-kbd: var(--color-surface-950-50);
+	--tw-prose-code: var(--color-surface-950-50);
+	--tw-prose-pre-code: var(--color-surface-950-50);
+	--tw-prose-pre-bg: var(--color-surface-100-900);
+	--tw-prose-th-borders: var(--color-surface-300-700);
+	--tw-prose-td-borders: var(--color-surface-200-800);
+
+	& :where(h1, h2, h3, h4, h5, h6) {
+		font-family: var(--typo-heading--font-family);
+		letter-spacing: var(--typo-heading--letter-spacing);
+		/* Clear sticky headers (the site bar, or a RouteModal's title bar) when jumping to `#id`. */
+		scroll-margin-top: 7rem;
+	}
+
+	& :where(pre) {
+		border: 1px solid var(--color-surface-200-800);
+	}
+
+	/* The typography plugin wraps inline code in literal backticks; drop them. */
+	& :where(code):not(:where(pre code))::before,
+	& :where(code):not(:where(pre code))::after {
+		content: none;
+	}
+
+	/*
+		Wrap long code instead of overflowing the page. Skeleton's base styles set inline <code> to
+		`nowrap`, so restore normal wrapping. Paths also get <wbr> after each `/` (see
+		`#lib/server/blog`); `anywhere` is the last resort for unbreakable strings.
+	*/
+	& :where(code) {
+		white-space: normal;
+		overflow-wrap: anywhere;
+	}
+	& :where(pre) {
+		white-space: pre-wrap;
+	}
+}

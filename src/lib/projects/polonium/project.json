@@ -1,0 +1,19 @@
+{
+    "name": "Polonium v1.1",
+    "description": "Tiling window mangement script for KDE Plasma",
+    "codeLink": "https://github.com/zeroxoneafour/polonium",
+    "deployLink": "https://store.kde.org/p/2140417/",
+    "tags": ["linux"],
+    "images": [
+        {
+            "src": "1.png",
+            "alt": "Polonium Screenshot 1"
+        },
+        {
+            "src": "2.png",
+            "alt": "Polonium Screenshot 2"
+        }
+    ],
+    "startDate": "2026-05-23",
+    "endDate": "ongoing"
+}
