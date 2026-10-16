@@ -10,6 +10,8 @@
 	import BrandIcon from '#lib/components/BrandIcon.svelte';
 	import { SITE } from '#lib/site.js';
 	import type { LayoutProps } from './$types';
+	import MailIcon from "@lucide/svelte/icons/mail";
+	import ResumeIcon from "@lucide/svelte/icons/file-user";
 
 	let { children }: LayoutProps = $props();
 
@@ -91,6 +93,24 @@
 					rel="me"
 				>
 					<BrandIcon name="linkedin" />
+				</a>
+				<a
+					href="mailto:vaughan@vaughanm.xyz"
+					class="btn-icon text-surface-800-200 transition-colors hover:text-primary-500 sm:btn-icon-lg"
+					aria-label="Email"
+					title="Email"
+					rel="me"
+				>
+					<MailIcon />
+				</a>
+				<a
+					href={resolve("/assets/resume.pdf")}
+					class="btn-icon text-surface-800-200 transition-colors hover:text-primary-500 sm:btn-icon-lg"
+					aria-label="Resume"
+					title="Resume"
+					rel="me"
+				>
+					<ResumeIcon />
 				</a>
 			</AppBar.Trail>
 		</AppBar.Toolbar>

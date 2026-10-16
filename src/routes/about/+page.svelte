@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PageMeta from '#lib/components/PageMeta.svelte';
+	import { resolve } from '$app/paths';
 </script>
 
 <PageMeta title="About Me" />
@@ -8,7 +9,9 @@
 	<h1 class="mb-4 h1">About Me</h1>
 	<p class="text-surface-800-200">
 		Hi! My name is Vaughan Milliman, and I am currently an undergraduate at the Georgia Institute of
-		Technology.
+		Technology. My resume is available <a class="text-primary-500 hover:underline" href={resolve("/assets/resume.pdf")}
+			>here</a
+		>.
 		<br />
 		I have been programming since I was in second grade. This site serves as a collection of my experience
 		in the field.
