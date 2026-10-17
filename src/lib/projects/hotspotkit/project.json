@@ -1,6 +1,6 @@
 {
 	"name": "HotspotKit",
-	"description": "Toolkit to precisely configure the windows adhoc hotspot",
+	"description": "Toolkit to precisely configure the windows ad hoc hotspot for VR streaming",
 	"codeLink": "https://github.com/zeroxoneafour/HotspotKit",
 	"tags": ["vr"],
 	"skills": ["csharp", "windows"],

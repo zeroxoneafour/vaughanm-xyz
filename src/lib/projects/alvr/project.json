@@ -1,6 +1,6 @@
 {
 	"name": "ALVR SGSR",
-	"description": "Added Snapdragon Game Super Resolution upscaling to ALVR, improving stream quality",
+	"description": "Added Snapdragon Game Super Resolution upscaling to Air-Light Virtual Reality, improving stream quality. Merged upstream",
 	"codeLink": "https://github.com/alvr-org/ALVR/pull/2723",
 	"tags": ["vr"],
 	"skills": ["rust", "graphics", "github"],
