@@ -1,12 +1,12 @@
 {
 	"name": "WiVRn PyroWave Fork",
 	"description": "Added PyroWave codec streaming to WiVRn, bringing various performance benefits. Not merged yet.",
-	"codeLink": "https://github.com/zeroxoneafour/WiVRn",
+	"codeLink": "https://github.com/zeroxoneafour/WiVRn/tree/pyrowave",
 	"tags": ["vr"],
 	"skills": ["cpp", "graphics", "ai"],
-	"importance": 90,
-	"startDate": "2025-09-25",
-	"endDate": "2025-10-10",
+	"importance": 83,
+	"startDate": "2026-09-25",
+	"endDate": "2026-10-10",
 	"slides": [
 		{
 			"src": "2026_09_25T09_33_32_000Z.jpg",

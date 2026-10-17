@@ -4,7 +4,7 @@
 	"deployLink": "https://server.vaughanm.xyz/",
 	"tags": ["linux"],
 	"skills": ["tailscale", "systems", "podman"],
-	"importance": 55,
+	"importance": 40,
 	"startDate": "2026-07-27",
 	"slides": [
 		{
